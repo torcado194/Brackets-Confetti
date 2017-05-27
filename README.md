@@ -5,7 +5,7 @@ An extension for Brackets that lets you type confetti.
 
 Garunteed to boost productivity by 200%
 
-![Confetti](https://raw.githubusercontent.com/torcado194/Brackets-Confetti/master/confetti.gif)
+![Confetti](http://i.imgur.com/Jc1bj6Y.gif)
 
 Variables
 ---------
