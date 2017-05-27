@@ -1,0 +1,13 @@
+{
+    "name": "torcado.confetti",
+    "title": "Confetti",
+    "description": "Create confetti as you type!",
+    "homepage": "",
+    "version": "1.0.1",
+    "author": "torcado (http://torcado.com)",
+    "license": "MIT",
+    "engines": {
+        "brackets": ">=1.0.0"
+    },
+    "keywords": ["confetti", "power mode", "screenshake", "particles", "canvas"]
+}
