@@ -25,3 +25,13 @@ Insane Mode
 I mean if you want I guess
 
 ![Confetti](http://i.imgur.com/iZRIcN9.gif)
+
+
+Installation
+------------
+
+Search for "Confetti" in extension manager
+
+OR
+
+Download zip and extract in extensions/user folder
