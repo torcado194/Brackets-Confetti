@@ -15,6 +15,8 @@ Variables
 * gravity - Makes confetti fall
 * insaneMode - Make it insane
 
+Edit these at the top of main.js
+
 Insane Mode
 -----------
 
