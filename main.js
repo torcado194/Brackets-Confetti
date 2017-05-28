@@ -30,8 +30,9 @@ define(function (require, exports, module) {
     var enableConfetti      = true,
         enableScreenshake   = false, //DOM redraw events from CodeMirror makes screenshake pretty laggy, but it's here if you want it.
         shakeIntensity      = 6,
-        confettiAmount      = 50,
+        confettiAmount      = 15,
         gravity             = false, //Makes confetti fall
+        insaneMode          = false, //insane
         prefs               = PreferencesManager.getExtensionPrefs("torcado.confetti");
     
     
@@ -91,9 +92,15 @@ define(function (require, exports, module) {
                 this.y += this.g;
                 this.g += 0.1;
             }
-            this.dx *= 0.9;
-            this.dy *= 0.9;
-            this.r *= 0.9;
+            if(insaneMode){
+                this.dx *= 0.985;
+                this.dy *= 0.985;
+                this.r *= 0.985;
+            } else {
+                this.dx *= 0.9;
+                this.dy *= 0.9;
+                this.r *= 0.9;
+            }
             if(this.r < 0.5){
                 bubbles.splice(bubbles.indexOf(this), 1);
             }
@@ -101,6 +108,7 @@ define(function (require, exports, module) {
     }
     
     function init(){
+        setTimeout(function () {
         editor = EditorManager.getCurrentFullEditor();
         root = editor.getRootElement();
         
@@ -110,6 +118,7 @@ define(function (require, exports, module) {
         offsetLeft = $(root).offset().left;
         
         $("#torcado-canvas").css({"top": offsetTop, "left": offsetLeft});
+        }, 100);
     }
     
     function changeFile(){
@@ -120,7 +129,7 @@ define(function (require, exports, module) {
         }
         cm = editor._codeMirror;
         cm.on("change", function (codeMirror, change) {
-            burst(changes, (change.text[0] == ";" ? 5 : 1)); //Second parameter of Burst, mult, multiplies confetti amount by this much. Typing a semicolon multiplies by 5
+            burst(changes, (change.text[0] == ";" ? 5 : 1) * (insaneMode ? 1.5 : 1)); //Second parameter of Burst, mult, multiplies confetti amount by this much. Typing a semicolon multiplies by 5. Insane mode defaults 2x
             changes++;
         });
         init();
@@ -137,7 +146,7 @@ define(function (require, exports, module) {
             for(var i = 0; i < bubbles.length; i++){
                 var b = bubbles[i];
                 b.update();
-                c.fillStyle = b.c; 
+                c.fillStyle = b.c;
                 c.beginPath();
                 c.arc(b.x, b.y, b.r, 0, Math.PI * 2, false);
                 c.fill();

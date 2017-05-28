@@ -13,3 +13,11 @@ Variables
 shakeIntensity - Screenshaje amount
 confettiAmount - Number of confetti particles per character
 gravity - Makes confetti fall
+insaneMode - Make it insane
+
+Insane Mode
+-----------
+
+I mean if you want I guess
+
+![Confetti](http://i.imgur.com/iZRIcN9.gif)
