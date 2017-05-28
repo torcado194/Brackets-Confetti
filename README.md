@@ -10,10 +10,10 @@ Garunteed to boost productivity by 200%
 Variables
 ---------
 
-shakeIntensity - Screenshaje amount
-confettiAmount - Number of confetti particles per character
-gravity - Makes confetti fall
-insaneMode - Make it insane
+* shakeIntensity - Screenshake amount
+* confettiAmount - Number of confetti particles per character
+* gravity - Makes confetti fall
+* insaneMode - Make it insane
 
 Insane Mode
 -----------
