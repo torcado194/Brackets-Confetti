@@ -17,6 +17,8 @@ Variables
 
 Edit these at the top of main.js
 
+You can also edit the 'z-index' in main.less to make the particles appear above the text. Some themes may mess with the z-index of the editor so if the confetti doesnt appear try changing that value.
+
 Insane Mode
 -----------
 
